@@ -198,9 +198,6 @@ public class SampleActuatorApplicationTests {
         ResponseEntity<Map> entity = new TestRestTemplate("user", getPassword()).getForEntity("http://localhost:" + this.port
                 + "/configprops", Map.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
-        assertEquals(1, entity.getBody().size());
-        @SuppressWarnings("unchecked")
-        Map<String, Object> body = (Map<String, Object>) entity;
-        assertTrue("Wrong body: " + body, ((String) body.get("context")).startsWith("application"));
+        assertEquals(26, entity.getBody().size());
     }
 }
