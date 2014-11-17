@@ -58,7 +58,7 @@ public class UnsecureSampleActuatorApplicationTests {
         assertEquals(HttpStatus.OK, entity.getStatusCode());
         @SuppressWarnings("unchecked")
         Map<String, Object> body = entity.getBody();
-        assertEquals("Hello Phil", body.get("message"));
+        assertEquals("Hello gh-1927", body.get("message"));
         assertFalse("Wrong headers: " + entity.getHeaders(), entity.getHeaders().containsKey("Set-Cookie"));
     }
 

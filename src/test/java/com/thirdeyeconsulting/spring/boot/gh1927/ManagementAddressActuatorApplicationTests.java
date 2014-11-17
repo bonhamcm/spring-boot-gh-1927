@@ -68,7 +68,7 @@ public class ManagementAddressActuatorApplicationTests {
         ResponseEntity<String> entity = new TestRestTemplate().getForEntity("http://localhost:" + this.managementPort
                 + "/admin/health", String.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
-        assertEquals("ok", entity.getBody());
+        assertEquals("{\"status\":\"UP\",\"database\":\"HSQL Database Engine\",\"hello\":1}", entity.getBody());
     }
 
 }

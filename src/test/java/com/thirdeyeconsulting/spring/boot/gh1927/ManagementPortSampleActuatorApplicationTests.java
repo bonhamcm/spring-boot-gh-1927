@@ -64,7 +64,7 @@ public class ManagementPortSampleActuatorApplicationTests {
         assertEquals(HttpStatus.OK, entity.getStatusCode());
         @SuppressWarnings("unchecked")
         Map<String, Object> body = entity.getBody();
-        assertEquals("Hello Phil", body.get("message"));
+        assertEquals("Hello gh-1927", body.get("message"));
     }
 
     @Test
@@ -81,7 +81,7 @@ public class ManagementPortSampleActuatorApplicationTests {
         ResponseEntity<String> entity = new TestRestTemplate().getForEntity("http://localhost:" + this.managementPort + "/health",
                 String.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
-        assertEquals("ok", entity.getBody());
+        assertEquals("{\"status\":\"UP\",\"database\":\"HSQL Database Engine\",\"hello\":1}", entity.getBody());
     }
 
     @Test
