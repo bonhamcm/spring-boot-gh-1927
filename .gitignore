@@ -1,0 +1,9 @@
+target
+build*
+dist
+.classpath
+.project
+.settings/
+.externalToolBuilders/
+.tmp
+.DS_Store
